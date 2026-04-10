@@ -76,6 +76,7 @@ async def to_code(config):
         },
         key=CONF_TEXT,
     ),
+    synchronous=False,
 )
 async def morse_code_start_to_code(config, action_id, template_arg, args):
     paren = await cg.get_variable(config[CONF_ID])
@@ -93,6 +94,7 @@ async def morse_code_start_to_code(config, action_id, template_arg, args):
             cv.GenerateID(): cv.use_id(MorseCodeComponent),
         }
     ),
+    synchronous=False,
 )
 async def morse_code_stop_to_code(config, action_id, template_arg, args):
     var = cg.new_Pvariable(action_id, template_arg)
